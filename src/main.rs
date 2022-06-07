@@ -7,6 +7,12 @@ fn main() {
         .run();
 }
 
+#[derive(Component)]
+struct Person;
+
+#[derive(Component)]
+struct Name(String);
+
 fn hello_world() {
     println!("hello world!");
 }
@@ -25,9 +31,3 @@ fn add_people(mut commands: Commands) {
         .insert(Person)
         .insert(Name("Zayna Nieves".to_string()));
 }
-
-#[derive(Component)]
-struct Person;
-
-#[derive(Component)]
-struct Name(String);
