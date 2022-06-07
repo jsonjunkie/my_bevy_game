@@ -5,5 +5,11 @@ fn main() {
 }
 
 fn hello_world() {
-    println!("hello world!")
+    println!("hello world!");
 }
+
+#[derive(Component)]
+struct Person;
+
+#[derive(Component)]
+struct Name(String);
