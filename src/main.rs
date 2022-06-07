@@ -36,6 +36,6 @@ fn add_people(mut commands: Commands) {
 
 fn greet_people(query: Query<&Name, With<Person>>) {
     for name in query.iter() {
-        println!("hello {}!", name.0)
+        println!("hello {}!", name.0);
     }
 }
