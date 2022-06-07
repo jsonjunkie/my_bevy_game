@@ -4,6 +4,7 @@ fn main() {
     App::new()
         .add_startup_system(add_people)
         .add_system(hello_world)
+        .add_system(greet_people)
         .run();
 }
 
@@ -30,4 +31,10 @@ fn add_people(mut commands: Commands) {
         .spawn()
         .insert(Person)
         .insert(Name("Zayna Nieves".to_string()));
+}
+
+fn greet_people(query: Query<&Name, With<Person>>) {
+    for name in query.iter() {
+        println!("hello {}!", name.0)
+    }
 }
